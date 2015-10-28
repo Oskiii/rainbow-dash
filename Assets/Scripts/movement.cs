@@ -23,14 +23,14 @@ public class movement : MonoBehaviour {
 
 	void FixedUpdate () {
 
-		bool move = Input.GetKey(KeyCode.Mouse0);
+		bool jump = Input.GetKey(KeyCode.Mouse0);
 
 		rib.velocity = new Vector2 (moveSpeed * maxSpeed * Mathf.Abs(transform.localScale.x), rib.velocity.y);
 
 		bool grounded1 = Physics2D.OverlapPoint (groundCheck1.transform.position, whatIsGround);
 		bool grounded2 = Physics2D.OverlapPoint (groundCheck2.transform.position, whatIsGround);
-		if (move &&  (grounded1 == true || grounded2 == true)) {
-
+		if (jump &&  (grounded1 == true || grounded2 == true)) {
+			rib.velocity = new Vector2(rib.velocity.x, 0f);
 			rib.AddForce(Vector3.up * jumpForce);
 			StartCoroutine("JumpRoll");
 		}
