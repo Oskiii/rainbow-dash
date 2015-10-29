@@ -5,7 +5,6 @@ public class movement : MonoBehaviour {
 
 	Rigidbody2D rib;
 	bool facingRight;
-	public float maxSpeed;
 	public float moveSpeed;
 
 	public float jumpForce;
@@ -25,7 +24,7 @@ public class movement : MonoBehaviour {
 
 		bool jump = Input.GetKey(KeyCode.Mouse0);
 
-		rib.velocity = new Vector2 (moveSpeed * maxSpeed * Mathf.Abs(transform.localScale.x), rib.velocity.y);
+		rib.velocity = new Vector2 (moveSpeed * Mathf.Abs(transform.localScale.x), rib.velocity.y);
 
 		bool grounded1 = Physics2D.OverlapPoint (groundCheck1.transform.position, whatIsGround);
 		bool grounded2 = Physics2D.OverlapPoint (groundCheck2.transform.position, whatIsGround);
