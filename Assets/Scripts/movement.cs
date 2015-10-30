@@ -15,6 +15,8 @@ public class movement : MonoBehaviour {
 	public float jumpRollSpeed;
 	private bool jumpRolling = false;
 
+	public GameObject levelStartPosition;
+
 	void Start () {
 		rib = GetComponent<Rigidbody2D> ();
 		facingRight = true;
@@ -39,7 +41,7 @@ public class movement : MonoBehaviour {
 	void Update(){
 		if (rib.velocity.x < moveSpeed) {
 			print ("lose");
-			transform.position = new Vector2(0f, 1f);
+			transform.position = levelStartPosition.transform.position;
 		}
 	}
 

@@ -48,6 +48,7 @@
   <ItemGroup>
      <Compile Include="Assets\Scripts\cameraFollow.cs" />
      <Compile Include="Assets\Scripts\movement.cs" />
+     <Compile Include="Assets\TrackSwitch.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>D:/Ohjelmat/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
